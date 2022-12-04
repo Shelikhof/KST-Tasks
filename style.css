@@ -1,0 +1,64 @@
+* {
+	font-size: 18px;
+	font-family: 'Open Sans', sans-serif;
+	margin: 0;
+	padding: 0;
+}
+body {
+	padding: 10px;
+	display: flex;
+	justify-content: center;
+}
+canvas {
+	border: 1px solid black;
+}
+
+.wrapper {
+	display: flex;
+	gap: 50px;
+}
+
+.controlPanel {
+	background: rgb(203, 244, 255);
+	width: 400px;
+	padding: 10px;
+}
+
+.controlPanel__color-input {
+	margin-bottom: 10px;
+}
+
+.controlPanel__color-input {
+	display: flex;
+	align-items: center;
+}
+
+.controlPanel__color-input > input {
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+#downloadCanvasBtn,
+button {
+	text-decoration: none;
+	display: inline-block;
+	margin-top: 10px;
+	padding: 5px 10px;
+	border-radius: 10px;
+	cursor: pointer;
+	color: white;
+	background: rgb(19, 105, 84);
+	outline: none;
+	border: 2px solid rgb(14, 77, 61);
+	font-size: 18px;
+	line-height: 20px;
+}
+
+#paintSizeControl {
+	margin-left: 10px;
+}
+
+.activeBtn {
+	background: #fff;
+	color: rgb(19, 105, 84);
+}
