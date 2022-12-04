@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<link rel="stylesheet" href="./style.css" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap"
+			rel="stylesheet"
+		/>
+		<title>Калькулятор</title>
+	</head>
+	<body>
+		<div onclick="copyAns()" class="wrapper">
+			<!-- 1 ряд -->
+			<div class="output">
+				<p id="output_action"></p>
+				<p id="output_current">0</p>
+			</div>
+			<div></div>
+			<div></div>
+			<div onclick="reset()" class="button_calc action_btn">C</div>
+			<div onclick="del()" class="button_calc action_btn">
+				<svg
+					xmlns="http://www.w3.org/2000/svg"
+					xmlns:xlink="http://www.w3.org/1999/xlink"
+					version="1.1"
+					id="Capa_1"
+					x="0px"
+					y="0px"
+					viewBox="0 0 489.425 489.425"
+					style="enable-background: new 0 0 489.425 489.425"
+					xml:space="preserve"
+					width="45"
+					height="45"
+				>
+					<g>
+						<g>
+							<path
+								d="M122.825,394.663c17.8,19.4,43.2,30.6,69.5,30.6h216.9c44.2,0,80.2-36,80.2-80.2v-200.7c0-44.2-36-80.2-80.2-80.2h-216.9    c-26.4,0-51.7,11.1-69.5,30.6l-111.8,121.7c-14.7,16.1-14.7,40.3,0,56.4L122.825,394.663z M29.125,233.063l111.8-121.8    c13.2-14.4,32-22.6,51.5-22.6h216.9c30.7,0,55.7,25,55.7,55.7v200.6c0,30.7-25,55.7-55.7,55.7h-217c-19.5,0-38.3-8.2-51.5-22.6    l-111.7-121.8C23.025,249.663,23.025,239.663,29.125,233.063z"
+							/>
+							<path
+								d="M225.425,309.763c2.4,2.4,5.5,3.6,8.7,3.6s6.3-1.2,8.7-3.6l47.8-47.8l47.8,47.8c2.4,2.4,5.5,3.6,8.7,3.6s6.3-1.2,8.7-3.6    c4.8-4.8,4.8-12.5,0-17.3l-47.9-47.8l47.8-47.8c4.8-4.8,4.8-12.5,0-17.3s-12.5-4.8-17.3,0l-47.8,47.8l-47.8-47.8    c-4.8-4.8-12.5-4.8-17.3,0s-4.8,12.5,0,17.3l47.8,47.8l-47.8,47.8C220.725,297.263,220.725,304.962,225.425,309.763z"
+							/>
+						</g>
+					</g>
+					<g></g>
+					<g></g>
+					<g></g>
+					<g></g>
+					<g></g>
+					<g></g>
+					<g></g>
+					<g></g>
+					<g></g>
+					<g></g>
+					<g></g>
+					<g></g>
+					<g></g>
+					<g></g>
+					<g></g>
+				</svg>
+			</div>
+
+			<!-- 2 ряд -->
+			<div onclick="setOperationValue('log')" class="button_calc action_btn">log</div>
+			<div onclick="setOperationValue('^')" class="button_calc action_btn">^</div>
+			<div onclick="setOperationValue('sqrt')" class="button_calc action_btn">
+				<svg
+					xmlns="http://www.w3.org/2000/svg"
+					xmlns:xlink="http://www.w3.org/1999/xlink"
+					width="45"
+					height="45"
+					viewBox="0 0 14 11"
+					version="1.1"
+				>
+					<title>pow rendered by TeX</title>
+
+					<defs>
+						<path
+							id="__n"
+							style="stroke: none"
+							d="M 0.96875 -0.484375 C 0.9375 -0.359375 0.890625 -0.140625 0.890625 -0.125 C 0.890625 -0.015625 0.984375 0.0625 1.078125 0.0625 C 1.140625 0.0625 1.25 0.015625 1.3125 -0.109375 C 1.3125 -0.140625 1.375 -0.375 1.40625 -0.5 C 1.578125 -1.171875 1.578125 -1.1875 1.578125 -1.203125 C 1.65625 -1.328125 2.015625 -2.03125 2.609375 -2.03125 C 2.859375 -2.03125 2.96875 -1.90625 2.96875 -1.671875 C 2.96875 -1.390625 2.75 -0.875 2.640625 -0.59375 C 2.609375 -0.53125 2.59375 -0.46875 2.59375 -0.390625 C 2.59375 -0.125 2.84375 0.0625 3.140625 0.0625 C 3.671875 0.0625 3.9375 -0.59375 3.9375 -0.71875 C 3.9375 -0.78125 3.859375 -0.78125 3.84375 -0.78125 C 3.75 -0.78125 3.75 -0.765625 3.71875 -0.671875 C 3.625 -0.375 3.390625 -0.109375 3.15625 -0.109375 C 3.046875 -0.109375 3 -0.1875 3 -0.296875 C 3 -0.40625 3.03125 -0.453125 3.078125 -0.5625 C 3.15625 -0.765625 3.390625 -1.328125 3.390625 -1.609375 C 3.390625 -1.984375 3.125 -2.203125 2.640625 -2.203125 C 2.1875 -2.203125 1.875 -1.921875 1.703125 -1.703125 C 1.6875 -2.125 1.28125 -2.203125 1.09375 -2.203125 C 0.59375 -2.203125 0.453125 -1.4375 0.453125 -1.4375 C 0.453125 -1.359375 0.53125 -1.359375 0.5625 -1.359375 C 0.640625 -1.359375 0.65625 -1.390625 0.671875 -1.453125 C 0.75 -1.75 0.859375 -2.03125 1.078125 -2.03125 C 1.234375 -2.03125 1.28125 -1.875 1.28125 -1.765625 C 1.28125 -1.703125 1.21875 -1.515625 1.203125 -1.375 C 1.15625 -1.25 1.109375 -1.046875 1.09375 -0.9375 L 0.96875 -0.484375 Z M 0.96875 -0.484375 "
+						/>
+						<path
+							id="radic"
+							style="stroke: none"
+							d="M 3.875 8.515625 L 2.109375 4.609375 C 2.0625 4.53125 2.046875 4.46875 1.96875 4.46875 C 1.9375 4.46875 1.921875 4.46875 1.828125 4.5625 L 0.84375 5.296875 C 0.734375 5.390625 0.734375 5.40625 0.734375 5.4375 C 0.734375 5.515625 0.765625 5.546875 0.828125 5.546875 C 0.859375 5.546875 0.875 5.546875 0.96875 5.46875 L 1.484375 5.078125 L 3.453125 9.421875 C 3.515625 9.5625 3.53125 9.5625 3.65625 9.5625 C 3.8125 9.5625 3.828125 9.53125 3.890625 9.375 L 8.4375 -0.03125 C 8.5 -0.140625 8.5 -0.15625 8.5 -0.203125 C 8.5 -0.3125 8.421875 -0.40625 8.296875 -0.40625 C 8.1875 -0.40625 8.15625 -0.328125 8.09375 -0.203125 L 3.875 8.515625 Z M 3.875 8.515625 "
+						/>
+						<path
+							id="x"
+							style="stroke: none"
+							d="M 3.328125 -3.015625 C 3.390625 -3.265625 3.625 -4.1875 4.3125 -4.1875 C 4.359375 -4.1875 4.609375 -4.1875 4.8125 -4.0625 C 4.53125 -4 4.34375 -3.765625 4.34375 -3.515625 C 4.34375 -3.359375 4.453125 -3.171875 4.71875 -3.171875 C 4.9375 -3.171875 5.25 -3.34375 5.25 -3.75 C 5.25 -4.265625 4.671875 -4.40625 4.328125 -4.40625 C 3.75 -4.40625 3.40625 -3.875 3.28125 -3.65625 C 3.03125 -4.3125 2.5 -4.40625 2.203125 -4.40625 C 1.171875 -4.40625 0.59375 -3.125 0.59375 -2.875 C 0.59375 -2.765625 0.703125 -2.765625 0.71875 -2.765625 C 0.796875 -2.765625 0.828125 -2.796875 0.84375 -2.875 C 1.1875 -3.9375 1.84375 -4.1875 2.1875 -4.1875 C 2.375 -4.1875 2.71875 -4.09375 2.71875 -3.515625 C 2.71875 -3.203125 2.546875 -2.546875 2.1875 -1.140625 C 2.03125 -0.53125 1.671875 -0.109375 1.234375 -0.109375 C 1.171875 -0.109375 0.953125 -0.109375 0.734375 -0.234375 C 0.984375 -0.296875 1.203125 -0.5 1.203125 -0.78125 C 1.203125 -1.046875 0.984375 -1.125 0.84375 -1.125 C 0.53125 -1.125 0.296875 -0.875 0.296875 -0.546875 C 0.296875 -0.09375 0.78125 0.109375 1.21875 0.109375 C 1.890625 0.109375 2.25 -0.59375 2.265625 -0.640625 C 2.390625 -0.28125 2.75 0.109375 3.34375 0.109375 C 4.375 0.109375 4.9375 -1.171875 4.9375 -1.421875 C 4.9375 -1.53125 4.859375 -1.53125 4.828125 -1.53125 C 4.734375 -1.53125 4.71875 -1.484375 4.6875 -1.421875 C 4.359375 -0.34375 3.6875 -0.109375 3.375 -0.109375 C 2.984375 -0.109375 2.828125 -0.421875 2.828125 -0.765625 C 2.828125 -0.984375 2.875 -1.203125 2.984375 -1.640625 L 3.328125 -3.015625 Z M 3.328125 -3.015625 "
+						/>
+					</defs>
+
+					<use xlink:href="#__n" x="0.582031" y="4.78516" />
+					<use xlink:href="#radic" x="-0.560939" y="1.05899" />
+					<use xlink:href="#x" x="7.73711" y="8.71797" />
+				</svg>
+			</div>
+			<div onclick="setOperationValue('÷')" class="button_calc action_btn">÷</div>
+
+			<!-- 3 ряд -->
+			<div onclick="onClick(7)" class="button_calc number_btn">7</div>
+			<div onclick="onClick(8)" class="button_calc number_btn">8</div>
+			<div onclick="onClick(9)" class="button_calc number_btn">9</div>
+			<div onclick="setOperationValue('×')" class="button_calc action_btn">×</div>
+
+			<!-- 4 ряд -->
+			<div onclick="onClick(4)" class="button_calc number_btn">4</div>
+			<div onclick="onClick(5)" class="button_calc number_btn">5</div>
+			<div onclick="onClick(6)" class="button_calc number_btn">6</div>
+			<div onclick="setOperationValue('-')" class="button_calc action_btn">-</div>
+
+			<!-- ряд -->
+			<div onclick="onClick(1)" class="button_calc number_btn">1</div>
+			<div onclick="onClick(2)" class="button_calc number_btn">2</div>
+			<div onclick="onClick(3)" class="button_calc number_btn">3</div>
+			<div onclick="setOperationValue('+')" class="button_calc action_btn">+</div>
+
+			<!-- 6 ряд-->
+			<div onclick="reverseNumber()" class="button_calc number_btn">±</div>
+			<div onclick="onClick(0)" class="button_calc number_btn">0</div>
+			<div onclick="onClick('.')" class="button_calc number_btn">,</div>
+			<div onclick="equel()" class="button_calc equel_btn">=</div>
+		</div>
+
+		<script>
+			console.log(
+				'/ - деление \n*(numPad) - умножение \nL - логорифм \nD - возведение в степень \nR - корень\nQ - изменение знака числа ',
+			);
+			//вешаем на документ функцию обработки нажатия клавиш
+			document.onkeydown = function checkKeycode(event) {
+				var keycode;
+				if (!event) {
+					var event = window.event;
+				}
+				if (event.keyCode) keycode = event.keyCode; // IE
+				else if (event.which) keycode = event.which; // all browsers
+				// проверка нажатых клавиш
+				switch (keycode) {
+					case 13:
+						equel();
+						break;
+					case 46:
+					case 67:
+						reset();
+						break;
+					case 8:
+						del();
+						break;
+					case 81:
+						reverseNumber();
+						break;
+					case 111:
+					case 191:
+						setOperationValue('÷');
+						break;
+					case 106:
+						setOperationValue('×');
+						break;
+					case 107:
+					case 187:
+						setOperationValue('+');
+						break;
+					case 189:
+					case 109:
+						setOperationValue('-');
+						break;
+					case 76:
+						setOperationValue('log');
+						break;
+					case 68:
+						setOperationValue('^');
+						break;
+					case 82:
+						setOperationValue('sqrt');
+						break;
+					case 96:
+					case 48:
+					case 45:
+						onClick(0);
+						break;
+					case 97:
+					case 35:
+					case 49:
+						onClick(1);
+						break;
+					case 98:
+					case 40:
+					case 50:
+						onClick(2);
+						break;
+					case 99:
+					case 34:
+					case 51:
+						onClick(3);
+						break;
+					case 100:
+					case 37:
+					case 52:
+						onClick(4);
+						break;
+					case 101:
+					case 12:
+					case 53:
+						onClick(5);
+						break;
+					case 102:
+					case 39:
+					case 54:
+						onClick(6);
+						break;
+					case 103:
+					case 36:
+					case 55:
+						onClick(7);
+						break;
+					case 104:
+					case 38:
+					case 56:
+						onClick(8);
+						break;
+					case 105:
+					case 33:
+					case 57:
+						onClick(9);
+						break;
+					case 188:
+					case 190:
+						onClick('.');
+						break;
+				}
+			};
+			//храним число
+			let numberValue = 0;
+			//храним строчное значение для вывода
+			let operationValue = '';
+			//имеет ли строка символы, кроме нуля
+			let isHasSymbols = false;
+
+			const OUTPUTCURRENT = document.getElementById('output_current');
+			const OUTPUTACTION = document.getElementById('output_action');
+
+			//функция обнуления
+			function reset() {
+				OUTPUTCURRENT.innerHTML = 0;
+				numberValue = 0;
+				operatoValue = '';
+				isHasSymbols = false;
+				OUTPUTACTION.innerHTML = '';
+			}
+
+			function reverseNumber() {
+				let currentValue = getCurValue();
+				currentValue *= -1;
+				OUTPUTCURRENT.innerHTML = currentValue;
+			}
+
+			//удаление последнего символа
+			function del() {
+				let value = OUTPUTCURRENT.innerHTML;
+				let valueLength = value.length;
+				if (value[valueLength - 2] == '.') {
+					OUTPUTCURRENT.innerHTML = value.slice(0, valueLength - 2);
+				} else if (value[valueLength - 2] == '-') {
+					OUTPUTCURRENT.innerHTML = '0';
+				} else if (value != '0') {
+					OUTPUTCURRENT.innerHTML = value.slice(0, valueLength - 1);
+				}
+				if (valueLength == 1 || valueLength == 0) {
+					OUTPUTCURRENT.innerHTML = '0';
+					isHasSymbols = false;
+				}
+				if (isIncludeEquel()) OUTPUTACTION.innerHTML = '';
+			}
+
+			function isIncludeEquel() {
+				return OUTPUTACTION.innerHTML.includes('=');
+			}
+
+			function getCurValue() {
+				return parseFloat(OUTPUTCURRENT.innerHTML);
+			}
+			//записываем оператор
+			function setOperationValue(operator) {
+				operationValue = operator;
+				isHasSymbols = false;
+				numberValue = getCurValue();
+				OUTPUTACTION.innerHTML = `${numberValue} ${operationValue}`;
+			}
+
+			//вычисляем значение
+			function equel() {
+				let currentValue = getCurValue();
+				let answer;
+				if (operationValue != '') {
+					switch (operationValue) {
+						case '÷':
+							answer = numberValue / currentValue;
+							break;
+						case '×':
+							answer = numberValue * currentValue;
+							break;
+						case '-':
+							answer = numberValue - currentValue;
+							break;
+						case '+':
+							answer = numberValue + currentValue;
+							break;
+						case 'log':
+							answer = Math.log(numberValue) / Math.log(currentValue);
+							break;
+						case '^':
+							answer = numberValue ** currentValue;
+							break;
+						case 'sqrt':
+							answer = numberValue ** (1 / currentValue);
+							break;
+					}
+					answer = Math.floor(answer * 100000) / 100000;
+					OUTPUTACTION.innerHTML = `${numberValue} ${operationValue} ${currentValue} = `;
+					numberValue = answer;
+					OUTPUTCURRENT.innerHTML = answer;
+					operationValue = '';
+				}
+			}
+
+			function copyAns() {
+				if (OUTPUTCURRENT.innerHTML != '0') navigator.clipboard.writeText(OUTPUTCURRENT.innerHTML);
+			}
+
+			// функция запоминания веденых значений
+			function onClick(number) {
+				if (isIncludeEquel()) {
+					OUTPUTACTION.innerHTML = '';
+				}
+				if (OUTPUTCURRENT.innerHTML.includes('.') && number == '.') return;
+				// максимальная длина числа 22 символа
+				if (OUTPUTCURRENT.innerHTML.length < 22) {
+					if (number == '.') OUTPUTCURRENT.innerHTML += number;
+					//если значение не ноль и строка не пустая, то прибавляет число к строке
+					else if (OUTPUTCURRENT.innerHTML != '0' && isHasSymbols == true)
+						OUTPUTCURRENT.innerHTML += number;
+					//иначе строка равна введённому числу
+					else OUTPUTCURRENT.innerHTML = number;
+					//строка становится не пустой
+					isHasSymbols = true;
+				}
+			}
+		</script>
+	</body>
+</html>
