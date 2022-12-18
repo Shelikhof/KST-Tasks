@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="style.css" />
+		<title>Ping 'n Pong</title>
+	</head>
+	<body>
+		<div class="wrapper">
+			<div>
+				<p id="timerLabel">01 : 00</p>
+				<canvas id="canvas"></canvas>
+				<button id="pauseBtn">Начать</button>
+				<div>			
+					<input type="text" id="nameInput" value="Аноним">
+					<select name="timer" id="timerSelect">
+						<option value="1">1 минтуа</option>
+						<option value="2">2 минуты</option>
+						<option value="3">3 минуты</option>
+						<option value="5">5 минут</option>
+						<option value="10">10 минут</option>
+					</select>
+				</div>
+			</div>
+			<div class="controlPanel">
+				<div class="speedWrapper">
+					<input type="range" min="1" max="9" value="1" id="speedInput" step="1" />
+					<span id="speedLabel">1</span>
+				</div>
+			</div>
+		</div>
+		<div id="scoreBoardWrapper"></div>
+		<script src="./script.js"></script>
+	</body>
+</html>
